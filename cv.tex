@@ -1,0 +1,329 @@
+%-------------------------
+% Rover Resume - Base Template
+% Link: https://github.com/subidit/rover-resume
+%
+% Shows code for various formatting options for different resume sections.
+% Education and Projects have single-line headers; while Experience uses double-line.
+% Some formatting codes are kept inline; consider \newcommand{cmd}{def}.
+% Excludes hyperref and icons for readability; MVP version.
+% Explore other templates for more options.
+% Mix and match as desired. Be consistent with headers and sub-headers.
+%------------------------
+
+\documentclass[11pt]{article} % fontsize 10pt/11pt/12pt
+
+\usepackage[margin=1in, letterpaper]{geometry}
+\setcounter{secnumdepth}{0} % remove section numbering
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0} % remove vertical spacing above and below
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsubsection}{\large\itshape}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+\pagestyle{empty} % remove page number
+\pdfgentounicode=1
+
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{doi}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{soul}
+
+\definecolor{verylightgray}{gray}{0.85}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=PineGreen,
+  filecolor=magenta,
+  urlcolor=NavyBlue,
+  citecolor=black
+}
+
+\usepackage[backend=biber, sorting=none, style=numeric, maxbibnames=10, giveninits=true, defernumbers=true]{biblatex} % Load biblatex with biber backend
+\addbibresource{references.bib}
+\addbibresource{conferences.bib}
+\AtEveryCitekey{\clearfield{eprint}}
+% % Count total number of entries in each refsection
+% \AtDataInput{%
+%   \csnumgdef{entrycount:\therefsection}{%
+%     \csuse{entrycount:\therefsection}+1}}
+
+% % Print the labelnumber as the total number of entries in the
+% % current refsection, minus the actual labelnumber, plus one
+% \DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}
+% \newrobustcmd*{\mkbibdesc}[1]{%
+%   \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
+
+\usepackage{xstring}
+\usepackage{etoolbox}
+\newboolean{bold}
+\newcommand{\makeauthorsbold}[1]{%
+  \DeclareNameFormat{author}{%
+    \setboolean{bold}{false}%
+    \renewcommand{\do}[1]{\expandafter\ifstrequal\expandafter{\namepartfamily}{####1}{\setboolean{bold}{true}}{}}%
+    \docsvlist{#1}%
+    \ifthenelse{\value{listcount}=1}
+    {%
+      {\expandafter\ifthenelse{\boolean{bold}}{\mkbibbold{\namepartfamily\addcomma\addspace \namepartgiveni}}{\namepartfamily\addcomma\addspace \namepartgiveni}}%
+    }{\ifnumless{\value{listcount}}{\value{liststop}}
+      {\expandafter\ifthenelse{\boolean{bold}}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}%
+      {\expandafter\ifthenelse{\boolean{bold}}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}%
+    }
+    \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}{}
+  }
+}
+\makeauthorsbold{Welborn,Samuel S}
+
+\begin{document}
+
+\begin{center}
+  \begin{minipage}{0.5\textwidth}
+    {\LARGE\bfseries
+      SAMUEL S. WELBORN
+    } \\ \medskip
+    Curriculum Vitae
+  \end{minipage} \hfill
+  \begin{minipage}{0.4\textwidth}
+    \raggedleft
+    {\faEnvelope} \ {swelborn@lbl.gov} \\
+    \href{https://www.linkedin.com/in/swelborn}{\faLinkedin} \ linkedin.com/in/swelborn \\
+    \href{https://github.com/swelborn}{\faGithub} \ github.com/swelborn \\
+    \href{https://scholar.google.com/citations?user=WsQfglgAAAAJ&hl=en&authuser=1}{\faGraduationCap} \ Google Scholar
+  \end{minipage}
+\end{center}
+
+%=================%
+\section{Education \& Training}
+%=================%
+\subsection{National Energy Research Scientific Computing Center (NERSC)}
+\begin{itemize}
+  \item NERSC Science Acceleration Program (NESAP) Postdoctoral Fellow \hfill 2022--Present
+\end{itemize}
+
+\subsection{SLAC National Accelerator Laboratory}
+\begin{itemize}
+  \item DOE-SCGSR Fellow \hfill 2021--2022
+\end{itemize}
+
+\subsection{University of Pennsylvania}
+\begin{itemize}
+  \item PhD in Materials Science and Engineering \hfill 2022
+  \item Thesis: `X-ray Scattering Investigations into Nanoporous Gold's Kinetic Behavior During Dealloying and Coarsening for Applications in 3D Energy Storage'
+  \item Advisor: Prof.\ Eric Detsi
+\end{itemize}
+
+\subsection{Virginia Polytechnic Institute and State University }
+\begin{itemize}
+  \item B.S. Chemical Engineering, \textit{summa cum laude} \hfill 2016
+  \item B.A. Chemistry, \textit{summa cum laude} \hfill 2016
+\end{itemize}
+
+%=================%
+\section{Postdoctoral Research Experience}
+%=================%
+
+\subsection{Data Science Engagement Group (DSEG), NERSC}
+
+\subsubsection{NESAP for Data Postdoctoral Fellow \hfill Nov 2022--Present}
+
+\begin{itemize}
+  \item Streaming from the National Center for Electron Microscopy (NCEM) to NERSC
+    \begin{itemize}
+      \item Identified NCEM's file I/O bottleneck on the 4D Camera, which generates data at 480 Gbit/s.
+      \item Implemented ZeroMQ-based messaging to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
+      \item Enhanced \textit{Distiller}, a React (TypeScript) web portal for NCEM users, with a `streaming sessions' feature. This leverages NERSC's Superfacility API and enables non-HPC experts to initiate and control streaming services at NERSC.\
+      \item Published two manuscripts on this work: (1) ISC 2024 and (2) Microscopy and Microanalysis.
+      \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://www.facebook.com/photo/?fbid=845960860865319&set=pcb.845964620864943}{Computing Sciences photo}).
+      \item Developed a proof-of-concept for an interactive, containerized operator pipeline that replicates the above workflow.
+    \end{itemize}
+
+  \item Streaming from the Advanced Light Source (ALS) to NERSC
+    \begin{itemize}
+      \item Gathered requirements from Tomography and Ptychography beamlines at ALS.
+      \item Created a working prototype operator for reconstructing tomography data in real time on NERSC using the EPICS-based pvaPy \href{https://github.com/epics-base/pvaPy/blob/master/documentation/streamingFramework.md#processing-chains}{streaming framework} with simulated data. The pipeline can sustain at least 3x current data throughput required by beamline 8.3.2.
+      \item Collaborating with the ALS Computing Group to integrate streaming into 8.3.2's data acquisition system.
+    \end{itemize}
+
+  \item NERSC-centered Activities
+    \begin{itemize}
+      \item Instructed and mentored new users of NERSC's Kubernetes cluster, Spin, in multiple training events.
+      \item Ensured NCEM's continued operations through a Perlmutter scheduled maintenance by piloting the Perlmutter On Demand (POD) service. This effort served as a major proof-of-concept for POD.\
+      \item Active member of the Streaming Working Group, meeting bi-weekly to discuss streaming efforts with ESNet.
+    \end{itemize}
+
+  \item Professional Development
+    \begin{itemize}
+      \item Accepted to and participated in the two-week Argonne Training Program on Extreme-Scale Computing (ATPESC) in 2023.
+    \end{itemize}
+\end{itemize}
+
+%=================%
+\section{Technical Skills}
+%=================%
+
+\begin{itemize}
+  \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://tomopyui.readthedocs.io/en/latest/}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering), electron microscopy
+  \item \textbf{Programming Languages:} Python, C++, TypeScript, Matlab
+  \item \textbf{Technologies:} ZeroMQ, Superfacility API, Apache Kafka, NATS, git, pvaPy, EPICS areaDetector, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Docker, Docker Compose, podman, GitHub Actions, slurm, Spin (NERSC kubernetes cluster), Dask Distributed, ipywidgets
+  \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024), federal grant writing for scientific funding
+\end{itemize}
+
+%=================%
+\section{Graduate Research Experience}
+%=================%
+
+\subsection{Nelson Weker Group: SLAC National Accelerator Laboratory \hspace*{\fill} 2021--2022}
+\begin{flushleft}
+  \textit{Fellowship:} Office of Science Graduate Student Research Fellowship (DOE-SCGSR, \$39,000)
+\end{flushleft}
+\begin{itemize}
+  \item X-ray absorption studies on the impact of curvature on charge storage behavior in 3D aperiodic nanoporous battery electrodes
+    \begin{itemize}
+      \item Developed atomic layer deposition recipe for coating multicomponent cathode (LiMn\textsubscript{2}O\textsubscript{4}) on aperiodic 3D nanoporous scaffolds
+      \item Started collaboration with Xerion Advanced Battery Corporation
+      \item Developed software to align and reconstruct X-ray nanotomography data: \href{https://tomopyui.readthedocs.io/en/latest/}{TomoPyUI}
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{Detsi Group: University of Pennsylvania \hspace*{\fill} 2016--2022}
+\begin{flushleft}
+  \textit{Fellowship:} Vagelos Institute for Energy Science and Technology Fellowship (VIEST, \$58,000)
+\end{flushleft}
+\begin{itemize}
+  \item X-ray scattering studies on the kinetic behavior of aperiodic nanoporous materials in real time during electrochemical and thermal processing
+    \begin{itemize}
+      \item Studied morphological evolution of nanoporous gold during synthesis and thermal coarsening using small- and wide-angle X-ray scattering
+      \item Developed a suite of MATLAB and Mathematica programs to model and post-process the corresponding X-ray scattering and electrochemical data
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+  \item Development and fabrication of three-dimensional tricontinuous bulk conductor-insulator-conductor nanocomposites for high-rate electrical energy storage
+    \begin{itemize}
+      \item Developed clean room fabrication protocol to make 3D nanoporous metal scaffolds and grow dissimilar layers inside their void space to create bulk conductor-insulator-conductor nanocomposites
+      \item Characterized the 3D nanocomposites using electrochemical characterization techniques including cyclic voltammetry and electrochemical impedance spectroscopy
+    \end{itemize}
+\end{itemize}
+
+%=================%
+\section*{Publications}
+%=================%
+\subsection*{Preprints}
+\begin{refsection}
+  \nocite{*}
+  \printbibliography[heading=none, type=misc]
+\end{refsection}
+
+\subsection{Journal Articles}
+Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations (Google Scholar)
+
+\begin{refsection}
+  \nocite{*}
+  \printbibliography[heading=none, type=article]
+\end{refsection}
+
+%=================%
+\section{Conferences and Seminars}
+%=================%
+\arrayrulecolor{black} % Set the color of the horizontal lines
+\setlength{\arrayrulewidth}{1mm} % Set the width of the outer border
+\renewcommand{\arraystretch}{1.4} % Increase row height
+
+\arrayrulecolor{black} % Set the color of the lines
+\begin{center}
+  \begin{tabular}{@{\extracolsep{0pt}}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{5.5cm}>{\centering\arraybackslash}m{2.5cm}}
+    \rowcolor{white} \textbf{Date(s)} & \textbf{Location} & \textbf{Conference/Seminar} & \textbf{Contribution} \\
+    \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-4}
+    \rowcolor{verylightgray}Nov 17--22, 2024 & Atlanta, GA & SC24: Streaming Birds of a Feather & Oral \\
+    Nov 17--22, 2024 & Atlanta, GA & SC 2024: DOE Booth & Demo \\
+    \rowcolor{verylightgray} May 12--16, 2024 & Hamburg, Germany & ISC High Performance 2024 & Oral \& Panelist \\
+    Oct 22--24, 2024 & Berkeley, CA & NERSC 50th Anniversary User Group Meeting & Poster \\
+    \rowcolor{verylightgray}Feb 21--22, 2024 & Berkeley, CA & NERSC Data Day & Oral \\
+    Nov 12--17, 2023 & Denver, CO & SC23: DOE Booth & Live Demo \\
+    \rowcolor{verylightgray}Sep 11--15, 2023 & Busan, South Korea & 20th International Microscopy Congress & Oral \& Poster\\
+    Jun 6, 2022 & (Virtual) & APS Scientific Computation Seminar Series & Invited Oral \\
+    \rowcolor{verylightgray} Oct 12, 2021 & (Virtual) & Nanoporous Metals by Alloy Corrosion Symposium & Invited Oral \\
+    Oct 10--14, 2021 & Orlando, FL (Virtual) & ECS Fall Meeting & Oral \\
+    \rowcolor{verylightgray} April 15, 2021 & Philadelphia, PA (Virtual) & Penn MSE Departmental Seminar & Invited Oral \\
+    Oct 4--9, 2020 & Honolulu, HI (Virtual) & ECS PRiME 2020 & Oral \\
+    \rowcolor{verylightgray} Jun 12, 2020 & Philadelphia, PA (Virtual) & Dual-source and Environmental X-ray Scattering Facility Seminar & Oral \\
+    May 21, 2020 & Philadelphia, PA (Virtual) & Philadelphia Regional ECS Graduate Student Seminar Series & Oral \\
+    \rowcolor{verylightgray}Dec 1--6, 2019 & Boston, MA & MRS 2019& Oral \\
+    Aug 22--23, 2019 & Dearborn, MI & MetFoam 2019 & Oral \\
+    \rowcolor{verylightgray}Aug 19--22, 2019 & Los Angeles, CA & AAAFM 2019 & Oral \\
+    Mar 10--14, 2019 & San Antonio, TX & TMS 2019 & Oral \\
+    \rowcolor{verylightgray}Feb 24--28, 2019 & Philadelphia, PA & ISNM 2019 & Oral \& Poster \\
+    Nov 25--30, 2018 & Boston, MA & MRS 2018 & Oral \\
+    \rowcolor{verylightgray}Jun 24--29, 2018 & Hong Kong & NANO 2018 & Poster \\
+  \end{tabular}
+\end{center}
+\newpage
+
+% %=================%
+% \section{Conferences and Seminars}
+% %=================%
+
+% \newrefcontext
+% \begin{refsection}
+%   \nocite{*}
+%   \printbibliography[heading=none, type=unpublished]
+% \end{refsection}
+
+%=================%
+\section*{Awards and Distinctions}
+%=================%
+
+\subsection*{Graduate}
+\begin{itemize}
+  \item 2021 DOE Office of Science SCGSR Fellow (Full Stipend, 1 year) \hfill \$39,000
+  \item 2020 NNCI Plenty of Beauty at the Bottom image contest \hfill \$1,000
+  \item 2019 VIEST Graduate Student Fellow (Full Tuition + Stipend, 1 year) \hfill \$58,000
+  \item TMS MetFoam 2019 Registration Award \hfill \$370
+\end{itemize}
+
+\subsection*{Undergraduate}
+\begin{itemize}
+  \item 2016 HyperCube Scholar Award, Virginia Tech Chemistry Department
+  \item 2016 Phi Kappa Phi Graduate Fellowship \hfill \$500
+  \item 2016 Inducted into Phi Kappa Phi and Phi Beta Kappa Honor Societies
+  \item 2015 Accepted into study abroad program at Ruhr-Universität Bochum \hfill
+  \item 2015 Recipient of Julius P. Bilisoly Scholarship, Virginia Tech Chemistry \hfill \$1,700
+  \item 2015 Recipient of Gerhard H. Beyer Chemical Engineering Scholarship \hfill \$2,000
+  \item 2014 Recipient of Steven Reese, R.H. Bogle Chemical Engineering Scholarships \hfill \$2,700
+  \item 2014 Recipient of Chemistry Summer Research Scholarship \hfill \$5,000
+  \item 2014 Academic Excellence Award --- Chemistry Department at Virginia Tech
+\end{itemize}
+
+%=================%
+\section{Mentoring \& Outreach}
+%=================%
+\subsection{Mentoring}
+\begin{itemize}
+  \item Spring-Summer 2020: Mentored a \href{https://www.viper.upenn.edu/}{VIPER} undergraduate and master's student on a simulation project during the COVID lockdown
+  \item Fall 2019: Mentored two students before and during Materials Research Society (\href{https://www.mrs.org/}{MRS}) 2019 \& Exhibit in collaboration with NSF's Partnerships for Research and Education in Materials (\href{https://new.nsf.gov/funding/opportunities/prem-partnerships-research-education-materials}{PREM}) program
+  \item Fall 2019: Mentored a master’s and two undergraduate Materials Science and Engineering (MSE) students
+  \item Spring 2019: Mentored an MSE undergraduate student
+  \item Summer 2018--2019: Mentored \href{https://www.viper.upenn.edu/}{VIPER} undergraduate students
+\end{itemize}
+
+\subsection{Outreach}
+\begin{itemize}
+  \item Fall 2019: Developed and conducted electrochemistry demos at \href{https://www.nano.upenn.edu/nanoday/}{NanoDay@Penn}
+  \item Summer 2019: Demonstrated electrochemical energy storage systems for the annual Middle School Science Outreach Program at Penn supported by the NSF-MRSEC program.
+  \item 2019--2022: Helped recruit new PhD students at Materials Science and Engineering open houses
+  \item 2019--2021: Served as The Electrochemical Society Student Chapter Secretary
+  \item Fall 2019: Co-founded The Electrochemical Society UPenn student chapter
+  \item 2017--2018: Served as the President of the MSE Materials Graduate Organization (\href{https://mse.seas.upenn.edu/graduate-groups-resources/}{MatGO})
+  \item 2015--2016: Co-Produced \href{https://www.facebook.com/rocktheblocks/}{Rock the Blocks Music and Arts Festival}
+  \item 2012--2016: Served in leadership roles in The Environmental Coalition at Virginia Tech
+\end{itemize}
+
+\end{document}
