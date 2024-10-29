@@ -24,7 +24,6 @@
 \pagestyle{empty} % remove page number
 \pdfgentounicode=1
 
-\usepackage{geometry}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{colortbl}
@@ -33,7 +32,6 @@
 \usepackage{cleveref}
 \usepackage{doi}
 \usepackage{fontawesome5}
-\usepackage{xcolor}
 \usepackage{soul}
 
 \definecolor{verylightgray}{gray}{0.85}
@@ -105,11 +103,13 @@
 \subsection{National Energy Research Scientific Computing Center (NERSC)}
 \begin{itemize}
   \item NERSC Science Acceleration Program (NESAP) Postdoctoral Fellow \hfill 2022--Present
+  \item Advisor: Dr.\ Deborah J.\ Bard
 \end{itemize}
 
 \subsection{SLAC National Accelerator Laboratory}
 \begin{itemize}
   \item DOE-SCGSR Fellow \hfill 2021--2022
+  \item Advisor: Dr.\ Johanna Nelson Weker
 \end{itemize}
 
 \subsection{University of Pennsylvania}
@@ -134,28 +134,29 @@
 \subsubsection{NESAP for Data Postdoctoral Fellow \hfill Nov 2022--Present}
 
 \begin{itemize}
-  \item Streaming from the National Center for Electron Microscopy (NCEM) to NERSC
+  \item Streaming from the National Center for Electron Microscopy (\href{https://foundry.lbl.gov/about/facilities/the-national-center-for-electron-microscopy-ncem/}{NCEM}) to NERSC
     \begin{itemize}
-      \item Identified NCEM's file I/O bottleneck on the 4D Camera, which generates data at 480 Gbit/s.
+      \item Identified file I/O bottleneck on the 4D Camera detector, which generates data at 480 Gbit/s.
       \item Implemented ZeroMQ-based messaging to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
-      \item Enhanced \textit{Distiller}, a React (TypeScript) web portal for NCEM users, with a `streaming sessions' feature. This leverages NERSC's Superfacility API and enables non-HPC experts to initiate and control streaming services at NERSC.\
-      \item Published two manuscripts on this work: (1) ISC 2024 and (2) Microscopy and Microanalysis.
-      \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://www.facebook.com/photo/?fbid=845960860865319&set=pcb.845964620864943}{Computing Sciences photo}).
+      \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, a React (TypeScript) web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
+      \item Two manuscripts accepted on this work: (1) \href{https://arxiv.org/abs/2403.14352}{ISC 2024 (preprint)} and (2) \href{https://doi.org/10.1093/mam/ozae109}{Microscopy and Microanalysis}.
+      \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://media.licdn.com/dms/image/v2/D5622AQGfyrY4f3aUZA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1700156147009?e=1733356800&v=beta&t=e2Myg_yb3r7hLHQsPGJYdi67cq30veIGsyed4i8dZ5s}{Computing Sciences photo}).
       \item Developed a proof-of-concept for an interactive, containerized operator pipeline that replicates the above workflow.
     \end{itemize}
 
-  \item Streaming from the Advanced Light Source (ALS) to NERSC
+  \item Streaming from the Advanced Light Source (\href{https://als.lbl.gov/}{ALS}) to NERSC
     \begin{itemize}
-      \item Gathered requirements from Tomography and Ptychography beamlines at ALS.
-      \item Created a working prototype operator for reconstructing tomography data in real time on NERSC using the EPICS-based pvaPy \href{https://github.com/epics-base/pvaPy/blob/master/documentation/streamingFramework.md#processing-chains}{streaming framework} with simulated data. The pipeline can sustain at least 3x current data throughput required by beamline 8.3.2.
-      \item Collaborating with the ALS Computing Group to integrate streaming into 8.3.2's data acquisition system.
+      \item Gathered requirements from tomography and ptychography beamlines at ALS.\
+      \item Developed prototype for real-time tomography data reconstruction that sustains at least 3x the current beamline throughput requirement.
+      \item Collaborating with the ALS Computing Group to integrate streaming into real data acquisition systems.
     \end{itemize}
+    \newpage
 
   \item NERSC-centered Activities
     \begin{itemize}
       \item Instructed and mentored new users of NERSC's Kubernetes cluster, Spin, in multiple training events.
       \item Ensured NCEM's continued operations through a Perlmutter scheduled maintenance by piloting the Perlmutter On Demand (POD) service. This effort served as a major proof-of-concept for POD.\
-      \item Active member of the Streaming Working Group, meeting bi-weekly to discuss streaming efforts with ESNet.
+      \item Active member of the Streaming Working Group, meeting bi-weekly to discuss streaming efforts with colleagues at NERSC and ESNet.
     \end{itemize}
 
   \item Professional Development
@@ -169,10 +170,10 @@
 %=================%
 
 \begin{itemize}
-  \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://tomopyui.readthedocs.io/en/latest/}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering), electron microscopy
-  \item \textbf{Programming Languages:} Python, C++, TypeScript, Matlab
-  \item \textbf{Technologies:} ZeroMQ, Superfacility API, Apache Kafka, NATS, git, pvaPy, EPICS areaDetector, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Docker, Docker Compose, podman, GitHub Actions, slurm, Spin (NERSC kubernetes cluster), Dask Distributed, ipywidgets
-  \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024), federal grant writing for scientific funding
+  \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://onlinelibrary.wiley.com/iucr/doi/10.1107/S1600577524003989}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering)
+  \item \textbf{Programming languages:} Python, C++, TypeScript, Matlab
+  \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
+  \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024 workshop), federal grant writing for scientific funding
 \end{itemize}
 
 %=================%
@@ -187,8 +188,8 @@
   \item X-ray absorption studies on the impact of curvature on charge storage behavior in 3D aperiodic nanoporous battery electrodes
     \begin{itemize}
       \item Developed atomic layer deposition recipe for coating multicomponent cathode (LiMn\textsubscript{2}O\textsubscript{4}) on aperiodic 3D nanoporous scaffolds
-      \item Started collaboration with Xerion Advanced Battery Corporation
-      \item Developed software to align and reconstruct X-ray nanotomography data: \href{https://tomopyui.readthedocs.io/en/latest/}{TomoPyUI}
+      \item Operated multiple X-ray beamlines at the Stanford Synchrotron Radiation Lightsource (SSRL) to study novel energy storage materials
+      \item Developed software to align and reconstruct X-ray nanotomography data: \href{https://onlinelibrary.wiley.com/iucr/doi/10.1107/S1600577524003989}{TomoPyUI}
     \end{itemize}
 
 \end{itemize}
@@ -206,7 +207,7 @@
 \end{itemize}
 
 \begin{itemize}
-  \item Development and fabrication of three-dimensional tricontinuous bulk conductor-insulator-conductor nanocomposites for high-rate electrical energy storage
+  \item Development of three-dimensional tricontinuous bulk conductor-insulator-conductor nanocomposites for high-rate electrical energy storage
     \begin{itemize}
       \item Developed clean room fabrication protocol to make 3D nanoporous metal scaffolds and grow dissimilar layers inside their void space to create bulk conductor-insulator-conductor nanocomposites
       \item Characterized the 3D nanocomposites using electrochemical characterization techniques including cyclic voltammetry and electrochemical impedance spectroscopy
@@ -223,7 +224,7 @@
 \end{refsection}
 
 \subsection{Journal Articles}
-Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations (Google Scholar)
+Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations (\href{https://scholar.google.com/citations?user=WsQfglgAAAAJ&hl=en&authuser=1}{Google Scholar})
 
 \begin{refsection}
   \nocite{*}
@@ -244,19 +245,19 @@ Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations
     \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-4}
     \rowcolor{verylightgray}Nov 17--22, 2024 & Atlanta, GA & SC24: Streaming Birds of a Feather & Oral \\
     Nov 17--22, 2024 & Atlanta, GA & SC 2024: DOE Booth & Demo \\
-    \rowcolor{verylightgray} May 12--16, 2024 & Hamburg, Germany & ISC High Performance 2024 & Oral \& Panelist \\
+    \rowcolor{verylightgray}May 12--16, 2024 & Hamburg, Germany & ISC High Performance 2024 & Oral \& Panelist \\
     Oct 22--24, 2024 & Berkeley, CA & NERSC 50th Anniversary User Group Meeting & Poster \\
     \rowcolor{verylightgray}Feb 21--22, 2024 & Berkeley, CA & NERSC Data Day & Oral \\
     Nov 12--17, 2023 & Denver, CO & SC23: DOE Booth & Live Demo \\
     \rowcolor{verylightgray}Sep 11--15, 2023 & Busan, South Korea & 20th International Microscopy Congress & Oral \& Poster\\
     Jun 6, 2022 & (Virtual) & APS Scientific Computation Seminar Series & Invited Oral \\
-    \rowcolor{verylightgray} Oct 12, 2021 & (Virtual) & Nanoporous Metals by Alloy Corrosion Symposium & Invited Oral \\
+    \rowcolor{verylightgray}Oct 12, 2021 & (Virtual) & Nanoporous Metals by Alloy Corrosion Symposium & Invited Oral \\
     Oct 10--14, 2021 & Orlando, FL (Virtual) & ECS Fall Meeting & Oral \\
-    \rowcolor{verylightgray} April 15, 2021 & Philadelphia, PA (Virtual) & Penn MSE Departmental Seminar & Invited Oral \\
+    \rowcolor{verylightgray}Apr 15, 2021 & Philadelphia, PA (Virtual) & Penn MSE Departmental Seminar & Invited Oral \\
     Oct 4--9, 2020 & Honolulu, HI (Virtual) & ECS PRiME 2020 & Oral \\
-    \rowcolor{verylightgray} Jun 12, 2020 & Philadelphia, PA (Virtual) & Dual-source and Environmental X-ray Scattering Facility Seminar & Oral \\
+    \rowcolor{verylightgray}Jun 12, 2020 & Philadelphia, PA (Virtual) & Dual-source and Environmental X-ray Scattering Facility Seminar & Oral \\
     May 21, 2020 & Philadelphia, PA (Virtual) & Philadelphia Regional ECS Graduate Student Seminar Series & Oral \\
-    \rowcolor{verylightgray}Dec 1--6, 2019 & Boston, MA & MRS 2019& Oral \\
+    \rowcolor{verylightgray}Dec 1--6, 2019 & Boston, MA & MRS 2019 & Oral \\
     Aug 22--23, 2019 & Dearborn, MI & MetFoam 2019 & Oral \\
     \rowcolor{verylightgray}Aug 19--22, 2019 & Los Angeles, CA & AAAFM 2019 & Oral \\
     Mar 10--14, 2019 & San Antonio, TX & TMS 2019 & Oral \\
@@ -294,7 +295,7 @@ Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations
   \item 2016 HyperCube Scholar Award, Virginia Tech Chemistry Department
   \item 2016 Phi Kappa Phi Graduate Fellowship \hfill \$500
   \item 2016 Inducted into Phi Kappa Phi and Phi Beta Kappa Honor Societies
-  \item 2015 Accepted into study abroad program at Ruhr-Universität Bochum \hfill
+  \item 2015 Accepted into study abroad program at Ruhr-Universität Bochum
   \item 2015 Recipient of Julius P. Bilisoly Scholarship, Virginia Tech Chemistry \hfill \$1,700
   \item 2015 Recipient of Gerhard H. Beyer Chemical Engineering Scholarship \hfill \$2,000
   \item 2014 Recipient of Steven Reese, R.H. Bogle Chemical Engineering Scholarships \hfill \$2,700
@@ -309,7 +310,7 @@ Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations
 \begin{itemize}
   \item Spring-Summer 2020: Mentored a \href{https://www.viper.upenn.edu/}{VIPER} undergraduate and master's student on a simulation project during the COVID lockdown
   \item Fall 2019: Mentored two students before and during Materials Research Society (\href{https://www.mrs.org/}{MRS}) 2019 \& Exhibit in collaboration with NSF's Partnerships for Research and Education in Materials (\href{https://new.nsf.gov/funding/opportunities/prem-partnerships-research-education-materials}{PREM}) program
-  \item Fall 2019: Mentored a master’s and two undergraduate Materials Science and Engineering (MSE) students
+  \item Fall 2019: Mentored a master's student and two undergraduate Materials Science and Engineering (MSE) students
   \item Spring 2019: Mentored an MSE undergraduate student
   \item Summer 2018--2019: Mentored \href{https://www.viper.upenn.edu/}{VIPER} undergraduate students
 \end{itemize}
