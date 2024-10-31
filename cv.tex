@@ -100,6 +100,7 @@
 %=================%
 \section{Education \& Training}
 %=================%
+\setlist[itemize]{noitemsep}
 \subsection{National Energy Research Scientific Computing Center (NERSC)}
 \begin{itemize}
   \item NERSC Science Acceleration Program (NESAP) Postdoctoral Fellow \hfill 2022--Present
@@ -128,6 +129,7 @@
 %=================%
 \section{Postdoctoral Research Experience}
 %=================%
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
 
 \subsection{Data Science Engagement Group (DSEG), NERSC}
 
@@ -137,8 +139,8 @@
   \item Streaming from the National Center for Electron Microscopy (\href{https://foundry.lbl.gov/about/facilities/the-national-center-for-electron-microscopy-ncem/}{NCEM}) to NERSC
     \begin{itemize}
       \item Identified file I/O bottleneck on the 4D Camera detector, which generates data at 480 Gbit/s.
-      \item Implemented ZeroMQ-based messaging to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
-      \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, a React (TypeScript) web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
+      \item Implemented \href{https://zeromq.org/}{ZeroMQ}-based messaging to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
+      \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, NCEM's React (TypeScript) web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
       \item Two manuscripts accepted on this work: (1) \href{https://arxiv.org/abs/2403.14352}{ISC 2024 (preprint)} and (2) \href{https://doi.org/10.1093/mam/ozae109}{Microscopy and Microanalysis}.
       \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://media.licdn.com/dms/image/v2/D5622AQGfyrY4f3aUZA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1700156147009?e=1733356800&v=beta&t=e2Myg_yb3r7hLHQsPGJYdi67cq30veIGsyed4i8dZ5s}{Computing Sciences photo}).
       \item Developed a proof-of-concept for an interactive, containerized operator pipeline that replicates the above workflow.
@@ -171,7 +173,7 @@
 
 \begin{itemize}
   \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://onlinelibrary.wiley.com/iucr/doi/10.1107/S1600577524003989}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering)
-  \item \textbf{Programming languages:} Python, C++, TypeScript, Matlab
+  \item \textbf{Programming languages:} Python, C++, TypeScript, MATLAB
   \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
   \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024 workshop), federal grant writing for scientific funding
 \end{itemize}
