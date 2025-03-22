@@ -1,3 +1,24 @@
+@article{welborn2024isc,
+author="Welborn, Samuel S.
+and Harris, Chris
+and Ercius, Peter
+and Bard, Deborah J.
+and Enders, Bjoern",
+editor="Weiland, Mich{\`e}le
+and Neuwirth, Sarah
+and Kruse, Carola
+and Weinzierl, Tobias",
+title="Accelerating Time-to-Science by Streaming Detector Data Directly into Perlmutter Compute Nodes",
+journal="High Performance Computing. ISC High Performance 2024 International Workshops",
+year="2025",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="243--256",
+abstract="Recent advancements in detector technology have significantly increased the size and complexity of experimental data, and high-performance computing (HPC) provides a path towards more efficient and timely data processing. However, movement of large data sets from acquisition systems to HPC centers introduces bottlenecks owing to storage I/O at both ends. This manuscript introduces a streaming workflow designed for an high data rate electron detector that streams data directly to compute node memory at the National Energy Research Scientific Computing Center (NERSC), thereby avoiding storage I/O. The new workflow deploys ZeroMQ-based services for data production, aggregation, and distribution for on-the-fly processing, all coordinated through a distributed key-value store. The system is integrated with the detector's science gateway and utilizes the NERSC Superfacility API to initiate streaming jobs through a web-based frontend. Our approach achieves up to a 14-fold increase in data throughput and enhances predictability and reliability compared to a I/O-heavy file-based transfer workflow. Our work highlights the transformative potential of streaming workflows to expedite data analysis for time-sensitive experiments.",
+isbn="978-3-031-73716-9",
+doi={10.1007/978-3-031-73716-9_17}
+}
+
 @article{welborn2024mandm,
   author  = {Samuel S. Welborn and Chris Harris and Stephanie M. Ribet and Georgios Varnavides and Colin Ophus and Bjoern Enders and Peter Ercius},
   doi     = {10.1093/mam/ozae109},

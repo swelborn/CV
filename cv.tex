@@ -43,20 +43,10 @@
   citecolor=black
 }
 
-\usepackage[backend=biber, sorting=none, style=numeric, maxbibnames=10, giveninits=true, defernumbers=true]{biblatex} % Load biblatex with biber backend
+\usepackage[backend=biber, sorting=none, style=numeric, maxbibnames=10, giveninits=true, defernumbers=true]{biblatex}
 \addbibresource{references.bib}
 \addbibresource{conferences.bib}
 \AtEveryCitekey{\clearfield{eprint}}
-% % Count total number of entries in each refsection
-% \AtDataInput{%
-%   \csnumgdef{entrycount:\therefsection}{%
-%     \csuse{entrycount:\therefsection}+1}}
-
-% % Print the labelnumber as the total number of entries in the
-% % current refsection, minus the actual labelnumber, plus one
-% \DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}
-% \newrobustcmd*{\mkbibdesc}[1]{%
-%   \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
 
 \usepackage{xstring}
 \usepackage{etoolbox}
@@ -127,7 +117,7 @@
 \end{itemize}
 
 %=================%
-\section{Postdoctoral Research Experience}
+\section{Postdoctoral Experience}
 %=================%
 \setlist[itemize]{noitemsep,left=0pt .. \parindent}
 
@@ -139,18 +129,18 @@
   \item Streaming from the National Center for Electron Microscopy (\href{https://foundry.lbl.gov/about/facilities/the-national-center-for-electron-microscopy-ncem/}{NCEM}) to NERSC
     \begin{itemize}
       \item Identified file I/O bottleneck on the 4D Camera detector, which generates data at 480 Gbit/s.
-      \item Implemented \href{https://zeromq.org/}{ZeroMQ}-based messaging to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
-      \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, NCEM's React (TypeScript) web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
-      \item Two manuscripts accepted on this work: (1) \href{https://arxiv.org/abs/2403.14352}{ISC 2024 (preprint)} and (2) \href{https://doi.org/10.1093/mam/ozae109}{Microscopy and Microanalysis}.
-      \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://media.licdn.com/dms/image/v2/D5622AQGfyrY4f3aUZA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1700156147009?e=1733356800&v=beta&t=e2Myg_yb3r7hLHQsPGJYdi67cq30veIGsyed4i8dZ5s}{Computing Sciences photo}).
-      \item Developed a proof-of-concept for an interactive, containerized operator pipeline that replicates the above workflow.
+      \item Implemented \textit{\href{https://zeromq.org/}{ZeroMQ}}-based pipeline to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
+      \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, NCEM's web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
+      \item Published two manuscripts on this work: \href{https://link.springer.com/chapter/10.1007/978-3-031-73716-9_17}{ISC 2024} and \href{https://doi.org/10.1093/mam/ozae109}{Microscopy and Microanalysis}.
+      \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://github.com/user-attachments/assets/4e6b2dd4-da00-4472-a519-34f49085c1ea}{Computing Sciences photo}).
+      \item Developing a flow-based programming application for interactive streaming: \href{https://github.com/NERSC/interactEM}{interactEM}.
     \end{itemize}
 
   \item Streaming from the Advanced Light Source (\href{https://als.lbl.gov/}{ALS}) to NERSC
     \begin{itemize}
       \item Gathered requirements from tomography and ptychography beamlines at ALS.\
-      \item Developed prototype for real-time tomography data reconstruction that sustains at least 3x the current beamline throughput requirement.
-      \item Collaborating with the ALS Computing Group to integrate streaming into real data acquisition systems.
+      \item Enabled real-time tomography data reconstruction pipeline that reduces turnaround time from \textgreater 10 minutes to \textbf{\textless 10 seconds}.
+      \item Collaborated with the ALS Computing Group to integrate the streaming reconstruction workflow into their existing Prefect tooling for use in production.
     \end{itemize}
     \newpage
 
@@ -173,8 +163,8 @@
 
 \begin{itemize}
   \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://onlinelibrary.wiley.com/iucr/doi/10.1107/S1600577524003989}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering)
-  \item \textbf{Programming languages:} Python, C++, TypeScript, MATLAB
-  \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
+  \item \textbf{Programming languages:} Python, C++, TypeScript
+  \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Helmfile, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
   \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024 workshop), federal grant writing for scientific funding
 \end{itemize}
 
@@ -219,14 +209,14 @@
 %=================%
 \section*{Publications}
 %=================%
-\subsection*{Preprints}
+% \subsection*{Preprints}s
 \begin{refsection}
   \nocite{*}
   \printbibliography[heading=none, type=misc]
 \end{refsection}
 
 \subsection{Journal Articles}
-Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations (\href{https://scholar.google.com/citations?user=WsQfglgAAAAJ&hl=en&authuser=1}{Google Scholar})
+Summary: \textbf{7} first author, \textbf{12} co-author, \textbf{400+} citations (\href{https://scholar.google.com/citations?user=WsQfglgAAAAJ&hl=en&authuser=1}{Google Scholar})
 
 \begin{refsection}
   \nocite{*}
@@ -245,7 +235,8 @@ Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations
   \begin{tabular}{@{\extracolsep{0pt}}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{5.5cm}>{\centering\arraybackslash}m{2.5cm}}
     \rowcolor{white} \textbf{Date(s)} & \textbf{Location} & \textbf{Conference/Seminar} & \textbf{Contribution} \\
     \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-4}
-    Nov 17--22, 2024 & Atlanta, GA & SC24: Streaming Birds of a Feather & Oral \\
+    \rowcolor{verylightgray}June 10--13, 2025 & Hamburg, Germany & ISC High Performance 2025 & Oral \\
+    Nov 17--22, 2024 & Atlanta, GA & SC24: Streaming Birds of a Feather & Oral \& Panelist \\
     \rowcolor{verylightgray}May 12--16, 2024 & Hamburg, Germany & ISC High Performance 2024 & Oral \& Panelist \\
     Oct 22--24, 2024 & Berkeley, CA & NERSC 50th Anniversary User Group Meeting & Poster \\
     \rowcolor{verylightgray}Feb 21--22, 2024 & Berkeley, CA & NERSC Data Day & Oral \\
@@ -309,6 +300,7 @@ Summary: \textbf{6} first author, \textbf{12} co-author, \textbf{400+} citations
 %=================%
 \subsection{Mentoring}
 \begin{itemize}
+  \item Summer 2025: Planned mentorship of three NERSC interns for work on \href{https://github.com/NERSC/interactEM}{interactEM}
   \item Spring-Summer 2020: Mentored a \href{https://www.viper.upenn.edu/}{VIPER} undergraduate and master's student on a simulation project during the COVID lockdown
   \item Fall 2019: Mentored two students before and during Materials Research Society (\href{https://www.mrs.org/}{MRS}) 2019 \& Exhibit in collaboration with NSF's Partnerships for Research and Education in Materials (\href{https://new.nsf.gov/funding/opportunities/prem-partnerships-research-education-materials}{PREM}) program
   \item Fall 2019: Mentored a master's student and two undergraduate Materials Science and Engineering (MSE) students
