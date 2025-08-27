@@ -129,11 +129,11 @@
   \item Streaming from the National Center for Electron Microscopy (\href{https://foundry.lbl.gov/about/facilities/the-national-center-for-electron-microscopy-ncem/}{NCEM}) to NERSC
     \begin{itemize}
       \item Identified file I/O bottleneck on the 4D Camera detector, which generates data at 480 Gbit/s.
-      \item Implemented \textit{\href{https://zeromq.org/}{ZeroMQ}}-based pipeline to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by \textbf{5--14x}.
+      \item Implemented \textit{\href{https://zeromq.org/}{ZeroMQ}}-based pipeline to stream data over 100 GbE directly to Perlmutter compute nodes, boosting raw throughput by up to \textbf{14x}.
       \item Enhanced \textit{\href{https://github.com/OpenChemistry/distiller}{Distiller}}, NCEM's web portal, to enable non-HPC experts to initiate and control streaming services at NERSC through the \href{https://docs.nersc.gov/services/sfapi/}{Superfacility API}.\
       \item Published two manuscripts on this work: \href{https://link.springer.com/chapter/10.1007/978-3-031-73716-9_17}{ISC 2024} and \href{https://doi.org/10.1093/mam/ozae109}{Microscopy and Microanalysis}.
       \item Demonstrated the workflow \textit{live} at SC23 at the DOE Booth (\href{https://github.com/user-attachments/assets/4e6b2dd4-da00-4472-a519-34f49085c1ea}{Computing Sciences photo}).
-      \item Developing a flow-based programming application for interactive streaming: \href{https://github.com/NERSC/interactEM}{interactEM}.
+      \item Developing a flow-based programming application for interactive streaming workflows:\\\href{https://github.com/NERSC/interactEM}{interactEM}.
     \end{itemize}
 
   \item Streaming from the Advanced Light Source (\href{https://als.lbl.gov/}{ALS}) to NERSC
@@ -164,7 +164,7 @@
 \begin{itemize}
   \item \textbf{Expertise:} data streaming and real-time data processing, full-stack development, user interface development (\href{https://onlinelibrary.wiley.com/iucr/doi/10.1107/S1600577524003989}{TomoPyUI}, \href{https://github.com/OpenChemistry/distiller}{Distiller}), synchrotron X-ray techniques (microscopy, tomography, spectroscopy, diffraction, scattering)
   \item \textbf{Programming languages:} Python, C++, TypeScript
-  \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Helm, Helmfile, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
+  \item \textbf{Technologies used:} ZeroMQ, NATS, git, pvaPy, CMake, vcpkg, pydantic, MessagePack, React, Redux, FastAPI, PostgreSQL, Alembic, Kubernetes, Jupyter, Helm, Helmfile, Docker, podman, GitHub Actions, slurm, Spin (NERSC Kubernetes cluster), Dask, ipywidgets, Superfacility API
   \item \textbf{Professional skills:} Public speaking (14 national and international scientific conference talks, 3 invited talks, panelist at ISC 2024 workshop), federal grant writing for scientific funding
 \end{itemize}
 
@@ -228,13 +228,14 @@ Summary: \textbf{7} first author, \textbf{12} co-author, \textbf{400+} citations
 %=================%
 \arrayrulecolor{black} % Set the color of the horizontal lines
 \setlength{\arrayrulewidth}{1mm} % Set the width of the outer border
-\renewcommand{\arraystretch}{1.4} % Increase row height
+\renewcommand{\arraystretch}{1.3} % Increase row height
 
 \arrayrulecolor{black} % Set the color of the lines
 \begin{center}
   \begin{tabular}{@{\extracolsep{0pt}}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}m{5.5cm}>{\centering\arraybackslash}m{2.5cm}}
     \rowcolor{white} \textbf{Date(s)} & \textbf{Location} & \textbf{Conference/Seminar} & \textbf{Contribution} \\
     \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}\cmidrule(l){4-4}
+    Oct 15--16, 2025 & Philadelphia, PA & Future Labs Live USA & Invited Oral \\
     \rowcolor{verylightgray}June 10--13, 2025 & Hamburg, Germany & ISC High Performance 2025 & Oral \\
     Nov 17--22, 2024 & Atlanta, GA & SC24: Streaming Birds of a Feather & Oral \& Panelist \\
     \rowcolor{verylightgray}May 12--16, 2024 & Hamburg, Germany & ISC High Performance 2024 & Oral \& Panelist \\
@@ -300,7 +301,7 @@ Summary: \textbf{7} first author, \textbf{12} co-author, \textbf{400+} citations
 %=================%
 \subsection{Mentoring}
 \begin{itemize}
-  \item Summer 2025: Planned mentorship of three NERSC interns for work on \href{https://github.com/NERSC/interactEM}{interactEM}
+  \item Summer 2025: Mentored two NERSC interns for work on \href{https://github.com/NERSC/interactEM}{interactEM}. One intern contributed an RDMA-based messaging service, and another contributed a \textit{Grafana} monitoring dashboard.
   \item Spring-Summer 2020: Mentored a \href{https://www.viper.upenn.edu/}{VIPER} undergraduate and master's student on a simulation project during the COVID lockdown
   \item Fall 2019: Mentored two students before and during Materials Research Society (\href{https://www.mrs.org/}{MRS}) 2019 \& Exhibit in collaboration with NSF's Partnerships for Research and Education in Materials (\href{https://new.nsf.gov/funding/opportunities/prem-partnerships-research-education-materials}{PREM}) program
   \item Fall 2019: Mentored a master's student and two undergraduate Materials Science and Engineering (MSE) students
